@@ -1,13 +1,16 @@
+import { Login } from "../pages/Login";
+
+const LoginPage = new Login();
 describe('template spec', () => {
 
   beforeEach(() => {
-    cy.visit('https://www.edu.goit.global/account/login')
-    cy.login('user888@gmail.com', '1234567890');
+    LoginPage.navigate();
+    LoginPage.login();
   })
  
   it('passes', () => {
-    cy.get('.css-7afvtf').click();
-    cy.get(':nth-child(9) > .css-bve2vl').click();
-    
+    LoginPage.logout();
   })
 })
+
+

@@ -1,13 +1,16 @@
+import { HomePage } from "../pages/HomePage";
+
+const StartPage = new HomePage();
 describe('template spec', () => {
 
   beforeEach(() => {
-    cy.visit('https://www.edu.goit.global/account/login')
-    cy.login('testowyqa@qa.team', 'QA!automation-1');
+    StartPage.navigate();
+
   })
  
-  it('passes', () => {
-    cy.get('.css-7afvtf').click();
-    cy.get(':nth-child(7) > .css-bve2vl').click();
-    
-  })
+ it('passes', () => {
+    StartPage.login();
+  //   StartPage.logout();
+  //Dla dalszych testów wykomentowalam logout
+ })
 })
